@@ -1,0 +1,42 @@
+# User Info for Output
+name = "Gautam Bishnoi"
+urn = "2581236"
+
+cart = {
+    "electronics": [45000, 1200, 3500, 999],
+    "clothing": [799, 1299, 499, 2500],
+    "home_decor": [1500, 200, 450, 3200]
+}
+
+print(f"Name: {name} | URN: {urn}\n")
+
+# Task: Traverse using keys(), values(), and items()
+
+# 1. Using keys() to list categories
+print("--- Categories in Cart (using keys()) ---")
+categories = cart.keys()
+print(list(categories))
+
+# 2. Using values() to see all price lists
+print("\n--- All Price Lists (using values()) ---")
+for prices in cart.values():
+    print(prices)
+
+# 3. Detailed Traversal (using items())
+print("\n--- Itemized Analysis (using items()) ---")
+total_inventory_value = 0
+
+for category, prices in cart.items():
+    category_total = sum(prices)
+    max_price = max(prices)
+    min_price = min(prices)
+    total_inventory_value += category_total
+
+    print(f"Category: {category.upper()}")
+    print(f" - Total Value: {category_total}")
+    print(f" - Most Expensive: {max_price}")
+    print(f" - Cheapest: {min_price}")
+    print("-" * 30)
+
+# 4. Global Stats
+print(f"\nFinal Total Cart Value: {total_inventory_value}")
