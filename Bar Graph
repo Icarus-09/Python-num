@@ -1,0 +1,11 @@
+print("Name: Gautam Bishnoi | Urn: 2581236\n\n")
+
+import matplotlib.pyplot as plt
+students = ['Divya', 'Isha', 'Akshay', 'Udit','Piyush']
+marks = [50,40.,30,45,10]
+
+plt.bar(students, marks, color='darkcyan')
+plt.xlabel("Students")
+plt.ylabel("Marks")
+plt.title("Student Performance (0-100)")
+plt.show()
