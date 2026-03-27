@@ -1,0 +1,50 @@
+# User Info for Output
+name = "Gautam Bishnoi"
+urn = "2581236"
+
+students = {
+    "Aman": [1, 82, "General"],
+    "Neha": [1, 91, "OBC"],
+    "Ravi": [1, 76, "SC"],
+    "Simran": [1, 88, "General"],
+    "Karan": [1, 69, "ST"]
+}
+
+print(f"Name: {name} | URN: {urn}\n")
+
+# Task 1: Displaying Details
+print("--- Task 1: Student Details ---")
+for s_name, details in students.items():
+    print(f"Student: {s_name}, Year: {details[0]}, Merit: {details[1]}, Category: {details[2]}")
+
+# Task 2, 3, 4 & 5: Allocation Process
+print("\n--- Task 2-5: Room Allocation ---")
+counts = {"Premium Room": 0, "Standard Room": 0, "Waiting List": 0}
+
+for s_name, details in students.items():
+    merit = details[1]
+
+    # Task 4: Break if merit is 100
+    if merit == 100:
+        print("Perfect score found. Stopping search.")
+        break
+
+    # Task 5: Continue (or skip) if merit < 60
+    if merit < 60:
+        continue
+
+    # Task 2: Allocation
+    if merit > 85:
+        room = "Premium Room"
+    elif 70 < merit <= 85:
+        room = "Standard Room"
+    else:
+        room = "Waiting List"
+
+    counts[room] += 1
+    print(f"{s_name} (Merit: {merit}) -> Allocated: {room}")
+
+# Task 3: Display counts [cite: 64, 66]
+print("\n--- Final Allocation Counts ---")
+for room_type, count in counts.items():
+    print(f"{room_type}: {count}")
