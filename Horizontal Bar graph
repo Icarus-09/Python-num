@@ -1,0 +1,20 @@
+print("Name: Gautam Bishnoi | Urn: 2581236\n\n")
+
+import matplotlib.pyplot as plt
+
+employees = ['E1', 'E2', 'E3', 'E4', 'E5']
+targets = [6000,4000,8000,3000,9000]
+
+bonus = []
+
+for t in targets:
+  if t < 5000:
+    bonus.append(t*0.10)
+  else:
+    bonus.append(t*0.20)
+
+plt.barh(employees, bonus, color='purple')
+plt.xlabel("Employees")
+plt.ylabel("Bonus (%)")
+plt.title("Promotion based on Target Achievement")
+plt.show()
